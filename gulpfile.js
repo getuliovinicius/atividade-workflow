@@ -7,6 +7,11 @@ var compileCSS = require('gulp-sass');
 var minifyCSS = require('gulp-clean-css') 
 var minifyHTML = require('gulp-htmlmin');
 var concat = require('gulp-concat');
+var del = require('del');
+
+gulp.task('remove-dist', function() {
+	del('./dist');
+});
 
 gulp.task('css', function() {
 	return gulp.src('./source/scss/**/*.scss')
@@ -22,11 +27,8 @@ gulp.task('html', function() {
 		.pipe(gulp.dest('./dist/'))
 });
  
-gulp.task('css:watch', function () {
+gulp.task('background', function () {
 	gulp.watch('./source/scss/**/*.scss', ['css']);
-});
-
-gulp.task('html:watch', function () {
 	gulp.watch('./source/*.html', ['html']);
 });
 
