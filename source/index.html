@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Atividade - Workflow</title>
+	<link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+	<!-- Título -->
+	<section id="titulo">
+		<h1 class="color-title">Atividade - Workflow</h1>
+		<p>Atividade para testar o ambiente de desenvolvimento.</p>
+	</section>
+	<!-- \\ Título -->	
+	<!-- Tarefas -->
+	<section id="tarefas">
+		<h2 class="color-title">Lista de tarefas</h2>
+		<div>
+			<p>
+				Elabore um boilerplate que será o ambiente básico para desenvolver um projeto escalável. Segue a estrutura de pastas e arquivos que o projeto deve conter.
+			</p>
+<pre>
+	--- dist
+	--- source
+	------ scss
+	------------ base.scss
+	------------ layout.scss
+	------------ style.scss
+	------ index.html
+</pre>
+			<p>
+				Ou seja na raiz do projeto teremos a pasta dist e source, dentro de source teremos o index.html e a pasta scss com seus arquivos (base, layout e style).	
+			</p>
+			<p>
+				Sua responsabilidade é criar tarefas que vão compilar e minificar os arquivos da pasta scss e enviar para a pasta (css) que ficará dentro da pasta dist.
+			</p>
+			<p>
+				Além disso você deve criar outra tarefa responsável por minificar o html da pasta source e enviar para dist.
+			</p>
+			<p>
+				Sendo assim você terá que pesquisar plugins no site oficial do GulpJS para encontrar soluções para resolver o problema em questão.
+			</p>
+			<p>
+				Um ponto importante é que: todos os arquivos da pasta source deve conter um watch para monitorar alterações (salvar o arquivo) e invocar suas respectivas tarefas.
+			</p>
+		</div>
+	</section>
+	<!-- \\ Tarefas -->	
+</body>
+</html>
