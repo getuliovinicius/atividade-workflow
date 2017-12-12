@@ -3,6 +3,7 @@
 'use strict';
  
 var gulp = require('gulp');
+const notify = require("gulp-notify");
 var compileCSS = require('gulp-sass');
 var minifyCSS = require('gulp-clean-css') 
 var minifyHTML = require('gulp-htmlmin');
@@ -15,7 +16,8 @@ gulp.task('remove-dist', function() {
 
 gulp.task('css', function() {
 	return gulp.src('./source/scss/**/*.scss')
-		.pipe(compileCSS().on('error', compileCSS.logError))
+		.pipe(compileCSS())
+		.on('error', notify.onError({title:'erro ao compilar', message:'<%= error.message %>'}))
 		.pipe(minifyCSS())
 		.pipe(concat('all.min.css'))
 		.pipe(gulp.dest('./dist/css'));
@@ -32,4 +34,4 @@ gulp.task('background', function () {
 	gulp.watch('./source/*.html', ['html']);
 });
 
-gulp.task('default', ['css', 'html']);
+gulp.task('default', ['css', 'html', 'background']);
